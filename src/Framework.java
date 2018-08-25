@@ -213,16 +213,18 @@ public class Framework extends JPanel implements MouseMotionListener, KeyListene
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO
-		if (e.getKeyChar() == 'a') {
+		if (e.getKeyChar() == 'd') {
 			app.player.setXVelocity(4.0);
+		} else if (e.getKeyChar() == 'a') {
+			app.player.setXVelocity(-4.0);
 		} else if (e.getKeyChar() == ' ') {
-			app.player.setYVelocity(-10.0);
+			app.player.jump();
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if (e.getKeyChar() == 'a') {
+		if (e.getKeyChar() == 'd' || e.getKeyChar() == 'a') {
 			app.player.setXVelocity(0.0);
 		}
 	}

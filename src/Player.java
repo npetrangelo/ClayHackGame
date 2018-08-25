@@ -10,7 +10,7 @@ public class Player {
 	private double pY = 0;
 	private double vX = 0;
 	private double vY = 0;
-	private double aY = 0.2;
+	private double aY = 0.3;
 	
 	private final int WIDTH = 100;
 	private final int HEIGHT = 100;
@@ -25,9 +25,18 @@ public class Player {
 	}
 	
 	public void update() {
-		vY += aY;
+		if (pY < 300) {
+			vY += aY;
+		}
+
 		pX += vX;
 		pY += vY;
+	}
+	
+	public void jump() {
+		if (pY >= 300) {
+			setYVelocity(-10);
+		}
 	}
 	
 	public void setXVelocity(double vX) {

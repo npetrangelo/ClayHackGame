@@ -28,8 +28,6 @@ public class App {
 
 	private int increment = 0;
 	
-	public boolean keyPressed;
-
 	public App() {
 		player = new Player("8bitColonial.png");
 		Thread threadForInitGame = new Thread() {
@@ -79,9 +77,6 @@ public class App {
 	 *            gameTime of the game.
 	 */
 	public void UpdateGame(long gameTime, Point deltaMousePosition) {
-		if (keyPressed) {
-			System.out.println("A is held down");
-		}
 		player.update();
 		// TODO
 	}
