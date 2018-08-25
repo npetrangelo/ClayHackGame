@@ -1,18 +1,10 @@
 
-import java.awt.Color;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Hashtable;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSlider;
 import javax.swing.SwingUtilities;
-import javax.swing.border.Border;
 
 /**
  * Creates frame and set its properties.
@@ -20,12 +12,6 @@ import javax.swing.border.Border;
 public class Window extends JFrame implements ActionListener {
 	public static int WIDTH = 896;
 	public static int HEIGHT = 693;
-
-	private Hashtable<Integer, JLabel> zLabels;
-	private JSlider zSlider;
-
-	private Hashtable<Integer, JLabel> camLabels;
-	private JSlider camSlider;
 
 	private JPanel mainPanel;
 
@@ -74,14 +60,6 @@ public class Window extends JFrame implements ActionListener {
 
 	public static Window getInstance() {
 		return instance;
-	}
-
-	public int getZValue() {
-		return zSlider.getValue();
-	}
-
-	public double getCamValue() {
-		return camSlider.getValue() / 100.0;
 	}
 
 	public static void main(String[] args) {
