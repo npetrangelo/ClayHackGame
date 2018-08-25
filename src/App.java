@@ -24,13 +24,14 @@ public class App {
 
 	Window window;
 	private static App instance;
-	private Player player;
+	public Player player;
 
 	private int increment = 0;
 	
 	public boolean keyPressed;
 
 	public App() {
+		player = new Player("8bitColonial.png");
 		Thread threadForInitGame = new Thread() {
 			@Override
 			public void run() {
@@ -54,7 +55,7 @@ public class App {
 	 * Set variables and objects for the game.
 	 */
 	private void Initialize() {
-		player = new Player(Player.generateSprite("8bitColonial.png"));
+		
 	}
 
 	/**
@@ -81,16 +82,17 @@ public class App {
 		if (keyPressed) {
 			System.out.println("A is held down");
 		}
+		player.update();
 		// TODO
 	}
 
 	/**
 	 * Draw the game to the screen.
 	 * 
-	 * @param g2d
-	 *            Graphics2D
+	 * @param g2d Graphics2D
+	 * 
 	 */
 	public void Draw(Graphics2D g2d) {
-		g2d.drawImage(player.getSprite(), 0, 0, 100, 100, null);
+		player.draw(g2d);
 	}
 }
