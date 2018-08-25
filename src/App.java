@@ -59,7 +59,13 @@ public class App {
 	 * Load game files - images, sounds, ...
 	 */
 	private void LoadContent() {
-
+		File file = new File("8bitColonial.png");
+		try {
+			img = ImageIO.read(file);
+		} catch (IOException e) {
+			System.err.println("Bad image file");
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -76,13 +82,6 @@ public class App {
 	 *            gameTime of the game.
 	 */
 	public void UpdateGame(long gameTime, Point deltaMousePosition) {
-		File file = new File("8bitColonial.png");
-		try {
-			img = ImageIO.read(file);
-		} catch (IOException e) {
-			System.err.println("Bad image file");
-			e.printStackTrace();
-		}
 		// TODO
 	}
 
