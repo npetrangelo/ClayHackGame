@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
@@ -16,7 +17,7 @@ import javax.swing.JPanel;
  * @author www.gametutorial.net
  */
 
-public class Framework extends JPanel implements MouseMotionListener {
+public class Framework extends JPanel implements MouseMotionListener, KeyListener {
 	private static final long serialVersionUID = 7230961570221429249L;
 
 	/**
@@ -203,5 +204,20 @@ public class Framework extends JPanel implements MouseMotionListener {
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
 	}
 }
