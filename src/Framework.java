@@ -64,10 +64,9 @@ public class Framework extends JPanel implements MouseMotionListener, KeyListene
 
 	// The actual game
 	private App app;
-
+	
 	public Framework() {
 		super();
-		addMouseMotionListener(this);
 		deltaMousePosition = new Point(0, 0);
 	}
 
@@ -213,11 +212,18 @@ public class Framework extends JPanel implements MouseMotionListener, KeyListene
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+		// TODO
+		if (e.getKeyChar() == 'a') {
+			System.out.println("Pressed A");
+			app.keyPressed = true;
+		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+		if (e.getKeyChar() == 'a') {
+			System.out.println("Released A");
+			app.keyPressed = false;
+		}
 	}
 }

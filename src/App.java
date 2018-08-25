@@ -23,10 +23,12 @@ public class App {
 	private double centerY = Framework.frameHeight / 2;
 
 	Window window;
-	BufferedImage img;
 	private static App instance;
+	private Player player;
 
 	private int increment = 0;
+	
+	public boolean keyPressed;
 
 	public App() {
 		Thread threadForInitGame = new Thread() {
@@ -52,20 +54,14 @@ public class App {
 	 * Set variables and objects for the game.
 	 */
 	private void Initialize() {
-		// TODO
+		player = new Player(Player.generateSprite("8bitColonial.png"));
 	}
 
 	/**
 	 * Load game files - images, sounds, ...
 	 */
 	private void LoadContent() {
-		File file = new File("8bitColonial.png");
-		try {
-			img = ImageIO.read(file);
-		} catch (IOException e) {
-			System.err.println("Bad image file");
-			e.printStackTrace();
-		}
+		// TODO
 	}
 
 	/**
@@ -82,6 +78,9 @@ public class App {
 	 *            gameTime of the game.
 	 */
 	public void UpdateGame(long gameTime, Point deltaMousePosition) {
+		if (keyPressed) {
+			System.out.println("A is held down");
+		}
 		// TODO
 	}
 
@@ -92,6 +91,6 @@ public class App {
 	 *            Graphics2D
 	 */
 	public void Draw(Graphics2D g2d) {
-		g2d.drawImage(img, 0, 0, 100, 100, null);
+		g2d.drawImage(player.getSprite(), 0, 0, 100, 100, null);
 	}
 }

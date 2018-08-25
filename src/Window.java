@@ -48,6 +48,8 @@ public class Window extends JFrame implements ActionListener {
 
 		mainPanel = new JPanel();
 		framework = new Framework();
+		addKeyListener(framework);
+		addMouseMotionListener(framework);
 		mainPanel.add(framework);
 		// Creates the instance of the Framework.java that extends the
 		// Canvas.java and puts it on the frame.
